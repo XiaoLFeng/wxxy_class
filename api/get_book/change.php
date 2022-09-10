@@ -15,7 +15,6 @@ $time = date("Y-m-d H:i:s");
 // 构建函数
 if ($key == $setting['Key']) {
     // 对数据表进行检查
-    
     // 对数据表进行写入操作
     mysqli_query($conn,"LOCK TABLE ".$setting['SQL_DATA']['book']." WRITE");
     $result_book_person = mysqli_query($conn,"SELECT * FROM ".$setting['SQL_DATA']['book']." WHERE s_ID='$student'");
