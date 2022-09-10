@@ -86,6 +86,59 @@ $book = json_decode($book,true);
                             </div>
                             <?PHP
                             } else {
+                                if ($_COOKIE['studentID'] == ('22344231' or '22344216' or '22344233')) {
+                                ?>
+                                <div class="col-12 mb-3">
+                                    <div class="row">
+                                        <div class="col-12 fs-6 fw-bold"><i class="bi bi-person-circle"></i> 便携查询</div>
+                                        <div class="col-12">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                    <th scope="col">内容</th>
+                                                    <th scope="col">信息</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>需要购书人数</td>
+                                                        <td>
+                                                            <?PHP
+                                                            $nums_s = 22344201;
+                                                            $fil_num = 0;
+                                                            while (!empty($book['data'][$nums_s]['studentID'])) {
+                                                                if ($book['data'][$nums_s]['need_book'] == "TRUE") {
+                                                                    $fil_num ++;
+                                                                }
+                                                                $nums_s ++;
+                                                            }
+                                                            echo $fil_num.'人';
+                                                            ?>    
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>领取书本人数</td>
+                                                        <td>
+                                                            <?PHP
+                                                            $nums_s = 22344201;
+                                                            $getbook_num = 0;
+                                                            while (!empty($book['data'][$nums_s]['studentID'])) {
+                                                                if ($book['data'][$nums_s]['get_book'] == "TRUE") {
+                                                                    $getbook_num ++;
+                                                                }
+                                                                $nums_s ++;
+                                                            }
+                                                            echo $getbook_num.' / '.$fil_num.'人';
+                                                            ?>    
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?PHP
+                                }
                             ?>
                             <div class="col-12">
                                 <table class="table table-striped">
