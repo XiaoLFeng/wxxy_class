@@ -86,7 +86,7 @@ $book = json_decode($book,true);
                             </div>
                             <?PHP
                             } else {
-                                if ($_COOKIE['studentID'] == ('22344231' or '22344216' or '22344233')) {
+                                if ($_COOKIE['studentID'] == '22344231' or $_COOKIE['studentID'] == '22344216' or $_COOKIE['studentID'] == '22344233' or $_COOKIE['studentID'] == '22344218') {
                                 ?>
                                 <div class="col-12 mb-3">
                                     <div class="row">
