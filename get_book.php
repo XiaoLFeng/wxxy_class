@@ -2,8 +2,19 @@
 // 页面ID
 $menu_page = 7;
 // 载入组件
+include($_SERVER['DOCUMENT_ROOT'].'/setting.inc.php');
 include($_SERVER['DOCUMENT_ROOT'].'/module/head-check.php');
 include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
+// 配置信息
+$key = htmlspecialchars($_GET['key']);
+
+// 载入信息
+$book_url = $setting['API']['Domain'].'/get_book/?key='.$setting['Key'];  
+$book_ch = curl_init($book_url);
+curl_setopt($book_ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+curl_setopt($book_ch, CURLOPT_RETURNTRANSFER, true);
+$book = curl_exec($book_ch);
+$book = json_decode($book,true);
 ?>
 <!doctype html>
 <!-- 
@@ -46,15 +57,86 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
                 <div class="card shadow rounded-3">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 mb-2">
-                                <div class="row text-center">
-                                    <div class="col-12"><font color="red">请勿重复提交数据，谢谢喵~</font></div>
-                                    <div class="col-12">手别太快了，上传对图片来</div>
-                                </div>
-                            </div>
+                            <div class="col-12 fs-5 fw-bold mb-3"><i class="bi bi-journal-bookmark"></i> 书本领取登记</div>
+                            <?PHP if ($_COOKIE['studentID'] == '22344233' and $key == $setting['Key']) {
+                            ?>
                             <div class="col-12">
-                                <iframe src="https://wj.qq.com/s2/10750231/ed6b/" frameborder="0" class="container" height="600px"></iframe>
+                                <form action="./get_book_upload.php" method="post">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <select class="form-select form-select-sm" name="student">
+                                                <?PHP 
+                                                $num = 22344201;
+                                                while (!empty($book['data'][$num]['studentID'])) {
+                                                    if ($book['data'][$num]['need_book'] == "FALSE" or $book['data'][$num]['get_book'] == "TRUE") {
+                                                        ?><option value="<?PHP echo $book['data'][$num]['studentID'] ?>" disabled><?PHP echo $book['data'][$num]['name'] ?></option><?PHP
+                                                    } else {
+                                                        ?><option value="<?PHP echo $book['data'][$num]['studentID'] ?>"><?PHP echo $book['data'][$num]['name'] ?></option><?PHP
+                                                    }
+                                                    $num ++;
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <button class="btn btn-primary" type="submit">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
+                            <?PHP
+                            } else {
+                            ?>
+                            <div class="col-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">学号</th>
+                                        <th scope="col">姓名</th>
+                                        <th scope="col">需要书</th>
+                                        <th scope="col">已领取</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?PHP 
+                                        $nums = 22344201;
+                                        while (!empty($book['data'][$nums]['studentID'])) {
+                                        ?>
+                                        <tr class="">
+                                            <th scope="row"><?PHP echo $book['data'][$nums]['studentID'] ?></th>
+                                            <td><?PHP echo $book['data'][$nums]['name'] ?></td>
+                                            <td>
+                                                <?PHP 
+                                                if ($book['data'][$nums]['need_book'] == "TRUE") {
+                                                    echo '需要';
+                                                } else {
+                                                    echo '<font color="red">不需要</font>';
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?PHP
+                                                if ($book['data'][$nums]['need_book'] == "FALSE") {
+                                                    echo '';
+                                                } else {
+                                                    if ($book['data'][$nums]['get_book'] == "TRUE") {
+                                                        echo '<font color="green">已领取</font>';
+                                                    } else {
+                                                        echo '<font color="red">未领取</font>';
+                                                    }
+                                                }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                        <?PHP
+                                        $nums ++;
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <?PHP
+                            } ?>
                         </div>
                     </div>
                 </div>
