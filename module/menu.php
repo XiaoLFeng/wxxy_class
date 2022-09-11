@@ -22,6 +22,7 @@ function menu_color($menu_num) {
                     <div class="col-12 mb-1"><a href="/non-member-fty.php" class="text-decoration-none <?PHP menu_color(5) ?>"><i class="bi bi-chat"></i> 青年大学习（全员）</a></div>
                     <!-- <div class="col-12 mb-1"><a href="/member-ty.php" class="text-decoration-none <?PHP menu_color(6) ?>"><i class="bi bi-chat-dots"></i> 青年大学习（团员）</a></div> -->
                     <div class="col-12 mb-1"><a href="/get_book.php" class="text-decoration-none <?PHP menu_color(7) ?>"><i class="bi bi-journal-bookmark"></i> 书本领取登记</a></div>
+                    <div class="col-12 mb-1"><a href="/signin/" class="text-decoration-none <?PHP menu_color(8) ?>"><i class="bi bi-box-arrow-in-right"></i> 事务签到表</a></div>
                 </div>
             </div>
         </div>
