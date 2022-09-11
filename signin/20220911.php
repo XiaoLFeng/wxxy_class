@@ -1,6 +1,17 @@
 <?php 
 // 页面ID
 $menu_page = 8;
+
+// 载入组件
+include($_SERVER['DOCUMENT_ROOT'].'/setting.inc.php');
+include($_SERVER['DOCUMENT_ROOT'].'/module/head-check.php');
+// 载入信息
+$signin_url = $setting['API']['Domain'].'/signin/?key='.$setting['Key'].'&studentID='.$_COOKIE['studentID'].'&type=myself';
+$signin_ch = curl_init($signin_url);
+curl_setopt($signin_ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+curl_setopt($signin_ch, CURLOPT_RETURNTRANSFER, true);
+$signin = curl_exec($signin_ch);
+$signin = json_decode($signin,true);
 ?>
 <!doctype html>
 <!-- 
@@ -18,7 +29,7 @@ $menu_page = 8;
         <title>无锡学院 - 软件工程|二班</title>
         <link rel="shortcut icon" href="/src/img/logo.jpg" type="image/x-icon">
         <!-- CSS -->
-        <link rel="stylesheet" href="https://npm.akass.cn/bootstrap@5.1.3/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/src/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://npm.akass.cn/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://npm.akass.cn/qweather-icons@1.1.1/font/qweather-icons.css">
     </head>
@@ -50,11 +61,53 @@ $menu_page = 8;
                             <div class="col-12 my-3">查询到场人 <a class="btn btn-danger" href="./admin_20220911.php" role="button">查询</a></div>
                             <?PHP
                             }
+                            if (empty($signin['data']['signin'])) {
                             ?>
-                            <div class="col-12 mb-1">点击下方按钮进行签到</div>
-                            <div class="col-12 mb-3"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">签到</button></div>
-                            <div class="col-12"></div>
-                            <div class="col-12"></div>
+                                <div class="col-12 mb-1">点击下方按钮进行签到</div>
+                                <div class="col-12 mb-3"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">签到</button></div>
+                            <?PHP
+                            } else {
+                            ?>
+                                <div class="col-12 mb-1">您已经完成签到啦~</div>
+                                <div class="col-12 mb-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">内容</th>
+                                            <th scope="col">信息</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">学号</th>
+                                                <td><?PHP echo $signin['data']['studentID'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">姓名</th>
+                                                <td><?PHP echo $signin['data']['name'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">签到</th>
+                                                <td>
+                                                    <?PHP 
+                                                    if (empty($signin['data']['signin'])) {
+                                                        echo '<font color="red">未签到</font>';
+                                                    } else {
+                                                        echo '<font color="green">已签到</font>';
+                                                    }
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">签到时间</th>
+                                                <td><?PHP echo $signin['data']['time'] ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?PHP
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -90,9 +143,9 @@ $menu_page = 8;
 <?PHP include($_SERVER['DOCUMENT_ROOT'].'/module/footer.php') ?>
 </body>
 <!-- JavaScript -->
-<script src="https://npm.akass.cn/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://npm.akass.cn/bootstrap@5.1.3/dist/js/bootstrap.bundle.js"></script>
-<script src="https://npm.akass.cn/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="/src/js/bootstrap.min.js"></script>
+<script src="/src/js/bootstrap.bundle.min.js"></script>
+<script src="/src/js/jQuery.js"></script>
 <script>
     // 加载内容
     $("#main").hide();

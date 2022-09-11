@@ -84,6 +84,25 @@ if ($key == $setting['Key']) {
         );
         // 输出数据
         echo json_encode($data,JSON_UNESCAPED_UNICODE);
+    } elseif ($type == 'myself') {
+        $result_siginin_check = mysqli_query($conn,"SELECT * FROM ".$setting['SQL_DATA']['signin']." WHERE studentID='$studentID'");
+        $result_person = mysqli_query($conn,"SELECT * FROM ".$setting['SQL_DATA']['info']." WHERE studentID='$studentID'");
+        $result_siginin_check_object = mysqli_fetch_object($result_siginin_check);
+        $result_person_object = mysqli_fetch_object($result_person);
+        // 编译数据
+        $data = array(
+            'output'=>'SUCCESS',
+            'code'=>200,
+            'info'=>'数据输出完毕',
+            'data'=>array(
+                'studentID'=>$result_siginin_check_object->studentID,
+                'name'=>$result_person_object->name,
+                'signin'=>$result_siginin_check_object->signin_20220911,
+                'time'=>$result_siginin_check_object->time_20220911,
+            ),
+        );
+        // 输出数据
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
     }
 } else {
     // 编译数据

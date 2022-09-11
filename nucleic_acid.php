@@ -20,7 +20,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
         <title>无锡学院 - 软件工程|二班</title>
         <link rel="shortcut icon" href="/src/img/logo.jpg" type="image/x-icon">
         <!-- CSS -->
-        <link rel="stylesheet" href="https://npm.akass.cn/bootstrap@5.1.3/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/src/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://npm.akass.cn/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://npm.akass.cn/qweather-icons@1.1.1/font/qweather-icons.css">
     </head>
@@ -65,9 +65,9 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
 <?PHP include($_SERVER['DOCUMENT_ROOT'].'/module/footer.php') ?>
 </body>
 <!-- JavaScript -->
-<script src="https://npm.akass.cn/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://npm.akass.cn/bootstrap@5.1.3/dist/js/bootstrap.bundle.js"></script>
-<script src="https://npm.akass.cn/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="/src/js/bootstrap.min.js"></script>
+<script src="/src/js/bootstrap.bundle.min.js"></script>
+<script src="/src/js/jQuery.js"></script>
 <script>
     // 加载内容
     $("#main").hide();
