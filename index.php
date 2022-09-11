@@ -4,6 +4,13 @@ $menu_page = 1;
 // 载入组件
 include($_SERVER['DOCUMENT_ROOT'].'/module/head-check.php');
 include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
+// 载入全部人用户个人信息
+$member_all_url = $setting['API']['Domain'].'/class/person.php?key='.$setting['Key'].'&type=all';    
+$member_all_ch = curl_init($member_all_url);
+curl_setopt($member_all_ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+curl_setopt($member_all_ch, CURLOPT_RETURNTRANSFER, true);
+$member_all = curl_exec($member_all_ch);
+$member_all = json_decode($member_all,true);
 ?>
 <!doctype html>
 <!-- 
@@ -37,12 +44,12 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
-<div id="main" class="container my-3">
+<div id="main" class="container">
     <div class="row">
         <div class="col-12 col-bg-4 col-lg-3 mb-3">
             <?PHP include('./module/menu.php');  ?>
         </div>
-        <div class="col-12 col-bg-8 col-lg-9 mb-3">
+        <div class="col-12 col-bg-8 col-lg-9 mt-3 mb-3">
             <div class="row">
                 <div class="col-12 col-lg-8 mb-4 d-flex flex-wrap">
                     <div class="card shadow rounded-3 flex-grow-1">
@@ -63,6 +70,93 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
                                 </div>
                                 <div class="col-12 mb-1 text-center fs-5 fw-bold"><?PHP echo $member['data']['name']; ?></div>
                                 <div class="col-12 text-center"><?PHP echo $member['data']['studentID']; ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 mb-4 d-flex flex-wrap">
+                    <div class="card shadow rounded-3 flex-grow-1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 mb-1 fs-5 fw-bold"><i class="bi bi-file-earmark-person"></i> 班干部表</div>
+                                <div class="col-12">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">学号</th>
+                                                <th scope="col">姓名</th>
+                                                <th scope="col">职位</th>
+                                                <th scope="col">QQ号</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?PHP
+                                            $num_add = 1;
+                                            while (!empty($member_all['data'][$num_add]['studentID'])) {
+                                            if ($member_all['data'][$num_add]['op'] == '1') {
+                                            ?>
+                                            <tr>
+                                                <th scope="row"><?PHP echo $member_all['data'][$num_add]['studentID'] ?></th>
+                                                <td><?PHP echo $member_all['data'][$num_add]['name'] ?></td>
+                                                <td><?PHP echo $member_all['data'][$num_add]['office'] ?></td>
+                                                <td><?PHP echo $member_all['data'][$num_add]['qq'] ?></td>
+                                            </tr>
+                                            <?PHP
+                                            }
+                                            $num_add ++;
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 mb-4 d-flex flex-wrap">
+                    <div class="card shadow rounded-3 flex-grow-1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 mb-1 fs-5 fw-bold"><i class="bi bi-file-earmark-person"></i> 班级辅导员</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 d-flex flex-wrap">
+                    <div class="card shadow rounded-3 flex-grow-1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 mb-1 fs-5 fw-bold"><i class="bi bi-file-earmark-person"></i> 校园地图</div>
+                                <div class="col-12 container">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">学号</th>
+                                                <th scope="col">姓名</th>
+                                                <th scope="col">职位</th>
+                                                <th scope="col">QQ号</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?PHP
+                                            $num_add = 1;
+                                            while (!empty($member_all['data'][$num_add]['studentID'])) {
+                                            if ($member_all['data'][$num_add]['op'] == '1') {
+                                            ?>
+                                            <tr>
+                                                <th scope="row"><?PHP echo $member_all['data'][$num_add]['studentID'] ?></th>
+                                                <td><?PHP echo $member_all['data'][$num_add]['name'] ?></td>
+                                                <td><?PHP echo $member_all['data'][$num_add]['office'] ?></td>
+                                                <td><?PHP echo $member_all['data'][$num_add]['qq'] ?></td>
+                                            </tr>
+                                            <?PHP
+                                            }
+                                            $num_add ++;
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

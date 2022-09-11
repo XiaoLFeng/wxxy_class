@@ -65,6 +65,7 @@ if ($key == $sql_key) {
                         'op'=>$result_person_object->op,
                         'office'=>$result_person_object->office,
                         'gender'=>$result_person_object->gender,
+                        'qq'=>$result_person_object->qq,
                     )
                 );
                 // 输出数据
@@ -92,6 +93,7 @@ if ($key == $sql_key) {
                     'op'=>$result_person_object->op,
                     'office'=>$result_person_object->office,
                     'gender'=>$result_person_object->gender,
+                    'qq'=>$result_person_object->qq,
             );
         }
         // 编译数据

@@ -8,7 +8,7 @@ function menu_color($menu_num) {
     }
 }
 ?>
-<div class="accordion sticky-top" id="acd">
+<div class="accordion sticky-top pt-3" id="acd">
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-One" aria-expanded="true" aria-controls="collapseOne"><i class="bi bi-clipboard"></i>&nbsp;面板</button>

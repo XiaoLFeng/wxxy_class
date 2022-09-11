@@ -37,12 +37,12 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
-<div id="main" class="container my-3">
+<div id="main" class="container">
     <div class="row">
         <div class="col-12 col-bg-4 col-lg-3 mb-3">
             <?PHP include('./module/menu.php');  ?>
         </div>
-        <div class="col-12 col-bg-8 col-lg-9 mb-3">
+        <div class="col-12 col-bg-8 col-lg-9 mt-3 mb-3">
             <div class="row">
                 <div class="card shadow rounded-3">
                     <div class="card-body">
