@@ -12,11 +12,12 @@ $callback = htmlspecialchars($_GET['callback']);
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>无锡学院 - 软件工程|二班</title>
-        <link rel="shortcut icon" href="/src/img/logo.jpg" type="image/x-icon">
+        <title><?PHP echo $normal['data']['web_title']['text']?> - <?PHP echo $normal['data']['web_subtitle']['text']?></title>
+        <link rel="shortcut icon" href="<?PHP echo $normal['data']['web_icon']['text']?>" type="image/x-icon">
+        <meta name="description" content="<?PHP echo $normal['data']['web_desc']['text']?>">
         <!-- CSS -->
-        <link rel="stylesheet" href="/src/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://npm.akass.cn/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="<?PHP echo $mirror['data']['info']['bootstrap_css'] ?>">
+        <link rel="stylesheet" href="<?PHP echo $mirror['data']['info']['bootstrap_icon'] ?>">
     </head>
 <body>
 <!-- 菜单 -->
@@ -39,7 +40,7 @@ $callback = htmlspecialchars($_GET['callback']);
                         <div class="card-body">
                             <form action="./plugins/login.php?callback=<?PHP echo $callback; ?>" method="post">
                                 <div class="row">
-                                    <div class="col-12 my-3 fs-4 fw-bold text-center">无锡学院二班 - 登录</div>
+                                    <div class="col-12 my-3 fs-4 fw-bold text-center"><?PHP echo $normal['data']['web_title']['text']?>二班 - 登录</div>
                                     <div class="col-12 mb-3 px-5 input-group">
                                         <span class="input-group-text"><i class="bi bi-person"></i>&nbsp;学号</span>
                                         <input type="text" class="form-control" placeholder="22344233" id="studentID" name="studentID" required>
@@ -76,9 +77,9 @@ $callback = htmlspecialchars($_GET['callback']);
 <?PHP include($_SERVER['DOCUMENT_ROOT'].'/module/footer.php') ?>
 </body>
 <!-- JavaScript -->
-<script src="/src/js/bootstrap.min.js"></script>
+<script src="<?PHP echo $mirror['data']['info']['qweather'] ?>"></script>
 <script src="/src/js/bootstrap.bundle.min.js"></script>
-<script src="/src/js/jQuery.js"></script>
+<script src="<?PHP echo $mirror['data']['info']['jquery'] ?>"></script>
 <script>
     // 加载内容
     $("#main").hide();

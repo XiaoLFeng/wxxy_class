@@ -15,12 +15,13 @@ $menu_page = 8;
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>无锡学院 - 软件工程|二班</title>
-        <link rel="shortcut icon" href="/src/img/logo.jpg" type="image/x-icon">
+        <title><?PHP echo $normal['data']['web_title']['text']?> - <?PHP echo $normal['data']['web_subtitle']['text']?></title>
+        <link rel="shortcut icon" href="<?PHP echo $normal['data']['web_icon']['text']?>" type="image/x-icon">
+        <meta name="description" content="<?PHP echo $normal['data']['web_desc']['text']?>">
         <!-- CSS -->
-        <link rel="stylesheet" href="/src/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://npm.akass.cn/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://npm.akass.cn/qweather-icons@1.1.1/font/qweather-icons.css">
+        <link rel="stylesheet" href="<?PHP echo $mirror['data']['info']['bootstrap_css'] ?>">
+        <link rel="stylesheet" href="<?PHP echo $mirror['data']['info']['bootstrap_icon'] ?>">
+        <link rel="stylesheet" href="<?PHP echo $mirror['data']['info']['qweather'] ?>">
     </head>
 <body style="background-color:#e3f2fd;">
 <!-- 菜单 -->
@@ -75,9 +76,9 @@ $menu_page = 8;
 <?PHP include($_SERVER['DOCUMENT_ROOT'].'/module/footer.php') ?>
 </body>
 <!-- JavaScript -->
-<script src="/src/js/bootstrap.min.js"></script>
+<script src="<?PHP echo $mirror['data']['info']['qweather'] ?>"></script>
 <script src="/src/js/bootstrap.bundle.min.js"></script>
-<script src="/src/js/jQuery.js"></script>
+<script src="<?PHP echo $mirror['data']['info']['jquery'] ?>"></script>
 <script>
     // 加载内容
     $("#main").hide();
