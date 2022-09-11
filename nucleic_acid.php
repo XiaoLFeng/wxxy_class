@@ -2,6 +2,7 @@
 // 页面ID
 $menu_page = 3;
 // 载入组件
+include($_SERVER['DOCUMENT_ROOT'].'/module/head-check.php');
 include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
 ?>
 <!doctype html>
@@ -36,7 +37,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
-<div id="main" class="container">
+<div id="main" class="container my-3">
     <div class="row">
         <div class="col-12 col-bg-4 col-lg-3 mb-3">
             <?PHP include('./module/menu.php');  ?>

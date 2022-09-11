@@ -37,7 +37,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
     <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
-<div id="main" class="container">
+<div id="main" class="container my-3">
     <div class="row">
         <div class="col-12 col-bg-4 col-lg-3 mb-3">
             <?PHP include('./module/menu.php');  ?>
@@ -59,10 +59,10 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
                         <div class="card-body text-center">
                             <div class="row">
                                 <div class="col-12 mb-3 text-center">
-                                    <img src="<?PHP echo $setting['API']['Domain'].'avatar/?uid='.$member['data']['uid']; ?>" style="width:120px;" class="rounded-circle">
+                                    <img src="<?PHP echo $setting['API']['Domain'].'/avatar/?studentID='.$member['data']['studentID']; ?>" style="width:120px;" class="rounded-circle">
                                 </div>
-                                <div class="col-12 mb-1 text-center fs-5 fw-bold"><?PHP echo $member['data']['username']; ?></div>
-                                <div class="col-12 text-center"><?PHP echo $member['data']['desc']; ?></div>
+                                <div class="col-12 mb-1 text-center fs-5 fw-bold"><?PHP echo $member['data']['name']; ?></div>
+                                <div class="col-12 text-center"><?PHP echo $member['data']['studentID']; ?></div>
                             </div>
                         </div>
                     </div>

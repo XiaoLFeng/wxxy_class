@@ -35,12 +35,10 @@ curl_setopt($mirror_ch, CURLOPT_RETURNTRANSFER, true);
 $mirror = curl_exec($mirror_ch);
 $mirror = json_decode($mirror,true);
 
-/*
 // 载入用户个人信息
-$member_url = $setting['API']['Domain'].'/data/web_user/?ssid='.$setting['SSID'].'&uid='.$_COOKIE['user'];    
+$member_url = $setting['API']['Domain'].'/class/person.php?key='.$setting['Key'].'&type=normal&studentID='.$_COOKIE['studentID'];    
 $member_ch = curl_init($member_url);
 curl_setopt($member_ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
 curl_setopt($member_ch, CURLOPT_RETURNTRANSFER, true);
 $member = curl_exec($member_ch);
 $member = json_decode($member,true);
-*/
