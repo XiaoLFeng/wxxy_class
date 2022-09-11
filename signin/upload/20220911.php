@@ -37,6 +37,27 @@ if (!empty($studentID)) {
                 window.history.go(-1);
             </script>
             EOF;
+    } elseif ($signin['output'] == 'ALREADY_SIGNIN') {
+        echo <<<EOF
+            <script language="javascript">
+                alert( "您已签到过了" )
+                window.history.go(-1);
+            </script>
+            EOF;
+    } elseif ($signin['output'] == 'USER_NONE') {
+        echo <<<EOF
+            <script language="javascript">
+                alert( "缺少用户信息" )
+                window.history.go(-1);
+            </script>
+            EOF;
+    } elseif ($signin['output'] == 'ERROR') {
+        echo <<<EOF
+            <script language="javascript">
+                alert( "数据库错误" )
+                window.history.go(-1);
+            </script>
+            EOF;
     } else {
         echo <<<EOF
             <script language="javascript">

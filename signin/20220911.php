@@ -45,7 +45,7 @@ $menu_page = 8;
                         <div class="row text-center">
                             <div class="col-12 fs-5 fw-bold mb-3">军训服装集合领取签到</div>
                             <?PHP
-                            if ($_COOKIE['studentID'] = '22344233' or $_COOKIE['studentID'] = '22344231' or $_COOKIE['studentID'] = '22344218' or $_COOKIE['studentID'] = '22344219' or $_COOKIE['studentID'] = '22344216') {
+                            if ($_COOKIE['studentID'] == '22344233' or $_COOKIE['studentID'] == '22344231' or $_COOKIE['studentID'] == '22344218' or $_COOKIE['studentID'] == '22344219' or $_COOKIE['studentID'] == '22344216') {
                             ?>
                             <div class="col-12 my-3">查询到场人 <a class="btn btn-danger" href="./admin_20220911.php" role="button">查询</a></div>
                             <?PHP

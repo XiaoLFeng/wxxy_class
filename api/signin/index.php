@@ -19,12 +19,34 @@ if ($key == $setting['Key']) {
     if ($type == 'normal') {
         if (!empty($studentID)) {
             mysqli_query($conn,"LOCK TABLE ".$setting['SQL_DATA']['signin']." WRITE");
-            if (mysqli_query($conn,"UPDATE ".$setting['SQL_DATA']['signin']." SET signin_20220911='TRUE',time_20220911='$time' WHERE studentID='$studentID'")) {
+            $result_person = mysqli_query($conn,"SELECT * FROM ".$setting['SQL_DATA']['signin']." WHERE studentID=$studentID");
+            $result_person_object = mysqli_fetch_object($result_person);
+            if (empty($result_person_object->signin_20220911)) {
+                if (mysqli_query($conn,"UPDATE ".$setting['SQL_DATA']['signin']." SET signin_20220911='TRUE',time_20220911='$time' WHERE studentID='$studentID'")) {
+                    // 编译数据
+                    $data = array(
+                        'output'=>'SUCCESS',
+                        'code'=>200,
+                        'info'=>'已签到',
+                    );
+                    // 输出数据
+                    echo json_encode($data,JSON_UNESCAPED_UNICODE);
+                } else {
+                    // 编译数据
+                    $data = array(
+                        'output'=>'ERROR',
+                        'code'=>200,
+                        'info'=>'签到失败，数据库错误',
+                    );
+                    // 输出数据
+                    echo json_encode($data,JSON_UNESCAPED_UNICODE);
+                }
+            } else {
                 // 编译数据
                 $data = array(
-                    'output'=>'SUCCESS',
+                    'output'=>'ALREADY_SIGNIN',
                     'code'=>200,
-                    'info'=>'已签到',
+                    'info'=>'您已签到过了！',
                 );
                 // 输出数据
                 echo json_encode($data,JSON_UNESCAPED_UNICODE);
