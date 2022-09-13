@@ -28,6 +28,18 @@ function menu_color($menu_num) {
         </div>
     </div>
     <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-Two" aria-expanded="true" aria-controls="collapseTwo"><i class="bi bi-clipboard"></i>&nbsp;管理</button>
+        </h2>
+        <div id="c-Two" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#acd">
+            <div class="accordion-body">
+                <div class="row px-4">
+                    <div class="col-12 mb-1"><a href="/setting.php" class="text-decoration-none <?PHP menu_color(100) ?>"><i class="bi bi-gear"></i> 个人设置</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
         <h2 class="accordion-header" id="headingFour">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-Four" aria-expanded="false" aria-controls="collapseFour"><i class="bi bi-share"></i>&nbsp;外链</button>
         </h2>

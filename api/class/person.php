@@ -66,6 +66,9 @@ if ($key == $sql_key) {
                         'office'=>$result_person_object->office,
                         'gender'=>$result_person_object->gender,
                         'qq'=>$result_person_object->qq,
+                        'displayname'=>$result_person_object->displayname,
+                        'ssid'=>$result_person_object->ssid,
+                        'city'=>$result_person_object->city,
                     )
                 );
                 // 输出数据
