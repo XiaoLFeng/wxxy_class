@@ -70,7 +70,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/plugins/function.php');
 </body>
 <!-- JavaScript -->
 <script src="<?PHP echo $mirror['data']['info']['qweather'] ?>"></script>
-<script src="/src/js/bootstrap.bundle.min.js"></script>
+<script src="<?PHP echo $mirror['data']['info']['bootstrap_bundle_js'] ?>"></script>
 <script src="<?PHP echo $mirror['data']['info']['jquery'] ?>"></script>
 <script>
     // 加载内容
