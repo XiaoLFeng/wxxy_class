@@ -9,6 +9,15 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/index.php"><i class="bi bi-house"></i> 主页</a>
         </li>
+        <?PHP 
+        if ($member['data']['op'] == '1') {
+        ?>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/admin/"><i class="bi bi-person-rolodex"></i> 管理员</a>
+        </li>
+        <?PHP
+        }
+        ?>
         <?PHP
         if (empty($_COOKIE['studentID'])) {
         ?>
