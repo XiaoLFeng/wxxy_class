@@ -48,7 +48,8 @@ function menu_color($menu_num) {
             <div class="accordion-body">
                 <div class="row px-4">
                     <div class="col-12 mb-1"><a href="http://jwgl.cwxu.edu.cn/jwglxt/xtgl/login_slogin.html" target="_blank" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i> 无锡教务（课表）</a></div>
-                    <div class="col-12"><a href="http://jwc.cwxu.edu.cn/index.jsp" target="_blank" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i> <?PHP echo $normal['data']['web_title']['text']?>教务处</a></div>
+                    <div class="col-12"><a href="http://jwc.cwxu.edu.cn/index.jsp" target="_blank" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i> 无锡学院教务处</a></div>
+                    <div class="col-12"><a href="http://wxstu.cwxu.edu.cn/" target="_blank" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i> 奥兰系统</a></div>
                     <div class="col-12"><a href="http://10.1.99.100/" target="_blank" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i> 校园网登录</a></div>
                     <div class="col-12"><a href="http://10.1.80.200:8080/Self/login/?302=LI" target="_blank" class="text-decoration-none text-black"><i class="bi bi-box-arrow-right"></i> 校园网管理</a></div>
                 </div>

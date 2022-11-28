@@ -1,0 +1,102 @@
+Date : 2022-11-02 16:55:44
+Directory : e:\Work\WEB\wxxy-class
+Total : 58 files,  11467 codes, 854 comments, 567 blanks, all 12888 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |          6 |      4,518 |        101 |         95 |      4,714 |
+| PHP        |         47 |      4,442 |        743 |        436 |      5,621 |
+| CSS        |          4 |      2,499 |         10 |         30 |      2,539 |
+| Markdown   |          1 |          8 |          0 |          6 |         14 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                          |         58 |     11,467 |        854 |        567 |     12,888 |
+| admin                                                      |          8 |        651 |         51 |         24 |        726 |
+| admin\module                                               |          3 |         91 |          6 |          5 |        102 |
+| admin\plugins                                              |          2 |        145 |         27 |         12 |        184 |
+| api                                                        |         15 |        810 |        248 |         57 |      1,115 |
+| api\auth                                                   |          2 |         35 |         17 |          6 |         58 |
+| api\avatar                                                 |          1 |         16 |         13 |          4 |         33 |
+| api\class                                                  |          5 |        473 |        123 |         25 |        621 |
+| api\get_book                                               |          2 |         65 |         27 |          6 |         98 |
+| api\main                                                   |          2 |        117 |         33 |          8 |        158 |
+| api\signin                                                 |          1 |         92 |         22 |          3 |        117 |
+| module                                                     |          4 |        156 |          5 |          4 |        165 |
+| plugins                                                    |          5 |      1,188 |        359 |        322 |      1,869 |
+| signin                                                     |          4 |        421 |         22 |          8 |        451 |
+| signin\upload                                              |          1 |         63 |         10 |          3 |         76 |
+| src                                                        |         10 |      7,017 |        111 |        125 |      7,253 |
+| src\css                                                    |          4 |      2,499 |         10 |         30 |      2,539 |
+| src\js                                                     |          6 |      4,518 |        101 |         95 |      4,714 |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                   | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\Work\WEB\wxxy-class\README.md                           | Markdown   |          8 |          0 |          6 |         14 |
+| e:\Work\WEB\wxxy-class\admin\class_book.php                | PHP        |        221 |          8 |          3 |        232 |
+| e:\Work\WEB\wxxy-class\admin\class_book_create.php         | PHP        |        112 |          6 |          3 |        121 |
+| e:\Work\WEB\wxxy-class\admin\index.php                     | PHP        |         82 |          4 |          1 |         87 |
+| e:\Work\WEB\wxxy-class\admin\module\head-check.php         | PHP        |         38 |          6 |          5 |         49 |
+| e:\Work\WEB\wxxy-class\admin\module\header.php             | PHP        |         26 |          0 |          0 |         26 |
+| e:\Work\WEB\wxxy-class\admin\module\menu.php               | PHP        |         27 |          0 |          0 |         27 |
+| e:\Work\WEB\wxxy-class\admin\plugins\class_book_change.php | PHP        |         77 |         14 |          6 |         97 |
+| e:\Work\WEB\wxxy-class\admin\plugins\class_book_create.php | PHP        |         68 |         13 |          6 |         87 |
+| e:\Work\WEB\wxxy-class\api\auth\changepassword.php         | PHP        |          0 |          0 |          1 |          1 |
+| e:\Work\WEB\wxxy-class\api\auth\login.php                  | PHP        |         35 |         17 |          5 |         57 |
+| e:\Work\WEB\wxxy-class\api\avatar\index.php                | PHP        |         16 |         13 |          4 |         33 |
+| e:\Work\WEB\wxxy-class\api\class\info_change.php           | PHP        |        111 |         33 |          6 |        150 |
+| e:\Work\WEB\wxxy-class\api\class\person.php                | PHP        |        104 |         24 |          4 |        132 |
+| e:\Work\WEB\wxxy-class\api\class\task.php                  | PHP        |        146 |         31 |          5 |        182 |
+| e:\Work\WEB\wxxy-class\api\class\task_change.php           | PHP        |         66 |         20 |          5 |         91 |
+| e:\Work\WEB\wxxy-class\api\class\task_create.php           | PHP        |         46 |         15 |          5 |         66 |
+| e:\Work\WEB\wxxy-class\api\get_book\change.php             | PHP        |         36 |         15 |          3 |         54 |
+| e:\Work\WEB\wxxy-class\api\get_book\index.php              | PHP        |         29 |         12 |          3 |         44 |
+| e:\Work\WEB\wxxy-class\api\header-control.php              | PHP        |          4 |          6 |          2 |         12 |
+| e:\Work\WEB\wxxy-class\api\index.php                       | PHP        |          8 |          7 |          3 |         18 |
+| e:\Work\WEB\wxxy-class\api\main\index.php                  | PHP        |         50 |         16 |          4 |         70 |
+| e:\Work\WEB\wxxy-class\api\main\mirrors.php                | PHP        |         67 |         17 |          4 |         88 |
+| e:\Work\WEB\wxxy-class\api\signin\index.php                | PHP        |         92 |         22 |          3 |        117 |
+| e:\Work\WEB\wxxy-class\auth.php                            | PHP        |         87 |          3 |          2 |         92 |
+| e:\Work\WEB\wxxy-class\get_book.php                        | PHP        |        210 |          5 |          2 |        217 |
+| e:\Work\WEB\wxxy-class\get_book_upload.php                 | PHP        |         42 |         10 |          3 |         55 |
+| e:\Work\WEB\wxxy-class\index.php                           | PHP        |        163 |          4 |          1 |        168 |
+| e:\Work\WEB\wxxy-class\member-ty.php                       | PHP        |         78 |          3 |          1 |         82 |
+| e:\Work\WEB\wxxy-class\module\footer.php                   | PHP        |         23 |          0 |          0 |         23 |
+| e:\Work\WEB\wxxy-class\module\head-check.php               | PHP        |         35 |          5 |          4 |         44 |
+| e:\Work\WEB\wxxy-class\module\header.php                   | PHP        |         39 |          0 |          0 |         39 |
+| e:\Work\WEB\wxxy-class\module\menu.php                     | PHP        |         59 |          0 |          0 |         59 |
+| e:\Work\WEB\wxxy-class\non-member-fty.php                  | PHP        |         78 |          3 |          1 |         82 |
+| e:\Work\WEB\wxxy-class\nucleic_acid.php                    | PHP        |         78 |          3 |          1 |         82 |
+| e:\Work\WEB\wxxy-class\pan.php                             | PHP        |         80 |          3 |          1 |         84 |
+| e:\Work\WEB\wxxy-class\plugins\Parsedown.php               | PHP        |      1,074 |        322 |        312 |      1,708 |
+| e:\Work\WEB\wxxy-class\plugins\function.php                | PHP        |         39 |          7 |          5 |         51 |
+| e:\Work\WEB\wxxy-class\plugins\login.php                   | PHP        |         61 |         15 |          4 |         80 |
+| e:\Work\WEB\wxxy-class\plugins\loginout.php                | PHP        |          3 |          0 |          0 |          3 |
+| e:\Work\WEB\wxxy-class\plugins\sql_conn.php                | PHP        |         11 |         15 |          1 |         27 |
+| e:\Work\WEB\wxxy-class\setting.php                         | PHP        |        133 |          3 |          1 |        137 |
+| e:\Work\WEB\wxxy-class\setting_data_upload.php             | PHP        |         74 |         13 |          5 |         92 |
+| e:\Work\WEB\wxxy-class\signin\20220911.php                 | PHP        |        153 |          4 |          2 |        159 |
+| e:\Work\WEB\wxxy-class\signin\admin_20220911.php           | PHP        |        116 |          5 |          2 |        123 |
+| e:\Work\WEB\wxxy-class\signin\index.php                    | PHP        |         89 |          3 |          1 |         93 |
+| e:\Work\WEB\wxxy-class\signin\upload\20220911.php          | PHP        |         63 |         10 |          3 |         76 |
+| e:\Work\WEB\wxxy-class\src\css\bootstrap-icons.css         | CSS        |      1,874 |          0 |          3 |      1,877 |
+| e:\Work\WEB\wxxy-class\src\css\bootstrap.min.css           | CSS        |          2 |          5 |          0 |          7 |
+| e:\Work\WEB\wxxy-class\src\css\city-picker.css             | CSS        |        138 |          0 |         23 |        161 |
+| e:\Work\WEB\wxxy-class\src\css\qweather-icons.css          | CSS        |        485 |          5 |          4 |        494 |
+| e:\Work\WEB\wxxy-class\src\js\bootstrap.bundle.min.js      | JavaScript |          1 |          6 |          0 |          7 |
+| e:\Work\WEB\wxxy-class\src\js\bootstrap.min.js             | JavaScript |          1 |          6 |          0 |          7 |
+| e:\Work\WEB\wxxy-class\src\js\city-picker.data.js          | JavaScript |      4,014 |         47 |          6 |      4,067 |
+| e:\Work\WEB\wxxy-class\src\js\city-picker.js               | JavaScript |        483 |         19 |         78 |        580 |
+| e:\Work\WEB\wxxy-class\src\js\jQuery.js                    | JavaScript |          1 |          1 |          0 |          2 |
+| e:\Work\WEB\wxxy-class\src\js\main.js                      | JavaScript |         18 |         22 |         11 |         51 |
+| e:\Work\WEB\wxxy-class\task.php                            | PHP        |        193 |          8 |          3 |        204 |
+| Total                                                      |            |     11,467 |        854 |        567 |     12,888 |
++------------------------------------------------------------+------------+------------+------------+------------+------------+

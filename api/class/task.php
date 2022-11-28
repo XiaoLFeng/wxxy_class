@@ -107,7 +107,7 @@ if ($key == $sql_key) {
             if (!empty($result_task_object->task_id)) {
                 $result_task_person = mysqli_query($conn,"SELECT * FROM ".$setting['SQL_DATA']['task_person']." a RIGHT JOIN ".$setting['SQL_DATA']['info']." b ON a.studentID=b.studentID");
                 while ($result_task_person_object = mysqli_fetch_object($result_task_person)) {
-                    if ($result_task_person_object->task_id == $task_id or empty($result_task_person_object->task_id)) {
+                    if ($result_task_person_object->task_id == $task_id) {
                         $result_person = mysqli_query($conn,"SELECT * FROM ".$setting['SQL_DATA']['info']." WHERE studentID='".$result_task_person_object->creator."'");
                         $result_person_object = mysqli_fetch_object($result_person);
                         $array[$result_task_person_object->studentID] = array(
