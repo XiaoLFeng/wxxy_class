@@ -56,7 +56,7 @@ $member_all = json_decode($member_all,true);
                     <div class="card shadow rounded-3 flex-grow-1 mb-3">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12 fs-5 mb-3"><i class="bi bi-emoji-smile"></i> 目前(<?PHP echo date('Y-m-d')?>) 在校外学生</div>
+                                <div class="col-12 fs-5 mb-3"><i class="bi bi-emoji-smile"></i> 历史记录</div>
                                 <div class="col-12 px-4 mb-3">
                                 <table class="table table-striped">
                                     <thead>
