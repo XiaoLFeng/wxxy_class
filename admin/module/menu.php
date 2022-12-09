@@ -19,6 +19,12 @@ function menu_color($menu_num) {
                     <a href="/admin/" class="text-decoration-none d-flex <?PHP menu_color(2) ?>"><i class="bi bi-person"></i>&nbsp;用户管理</a>
                 </div>
                 <div class="col-12 my-2 px-4">
+                    <a href="/admin/out_school_member.php" class="text-decoration-none d-flex <?PHP menu_color(4) ?>"><i class="bi bi-person"></i>&nbsp;进出校管理</a>
+                </div>
+                <div class="col-12 my-2 px-4">
+                    <a href="/admin/lishi_out_school_member.php" class="text-decoration-none d-flex <?PHP menu_color(5) ?>"><i class="bi bi-person"></i>&nbsp;历史出校记录</a>
+                </div>
+                <div class="col-12 my-2 px-4">
                     <a href="/admin/class_book.php" class="text-decoration-none d-flex <?PHP menu_color(3) ?>"><i class="bi bi-book"></i>&nbsp;作业管理</a>
                 </div>
             </div>

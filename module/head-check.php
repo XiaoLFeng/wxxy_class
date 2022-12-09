@@ -1,5 +1,6 @@
 <?PHP
 // 检查是否正常登录
+/*
 $callback = htmlspecialchars($_GET['callback']);
 if ($menu_id == 2) {
     if (!empty($_COOKIE['studentID'])) {
@@ -15,6 +16,7 @@ if ($menu_id == 2) {
         header('location: https://ourwxxy.x-lf.com/auth.php?callback='.$get_ip);
     }
 }
+*/
 
 // 获取数据（获取数据库信息）
 include($_SERVER['DOCUMENT_ROOT'].'/setting.inc.php');
@@ -42,3 +44,11 @@ curl_setopt($member_ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
 curl_setopt($member_ch, CURLOPT_RETURNTRANSFER, true);
 $member = curl_exec($member_ch);
 $member = json_decode($member,true);
+
+// 载入用户个人信息
+$back_school_sel_url = $setting['API']['Domain'].'/out_school/select.php?key='.$setting['Key'].'&studentID='.$_COOKIE['studentID'];    
+$back_school_sel_ch = curl_init($back_school_sel_url);
+curl_setopt($back_school_sel_ch,CURLOPT_USERAGENT,$_SERVER['HTTP_USER_AGENT']);
+curl_setopt($back_school_sel_ch, CURLOPT_RETURNTRANSFER, true);
+$back_school_sel = curl_exec($back_school_sel_ch);
+$back_school_sel = json_decode($back_school_sel,true);
